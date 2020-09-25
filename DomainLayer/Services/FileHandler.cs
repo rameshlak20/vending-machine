@@ -13,6 +13,8 @@ namespace DomainLayer.Services
         private const int Pos_ItemName = 1;
         private const int Pos_ItemPrice = 2;
         private const int Pos_itemType = 3;
+        private const int Pos_itemQty = 4;
+
 
         public Dictionary<string, VendingItem> GetVendingItems()
         {
@@ -41,23 +43,28 @@ namespace DomainLayer.Services
                                 itemPrice = 0M;
                             }
 
-                            int itemsRemaining = 5;
+                            if (!int.TryParse(itemDetails[Pos_itemQty], out int itemQty))
+                            {
+                                itemQty = 0;
+                            }
+
+                           // int itemsRemaining = 5;
 
                             VendingItem item;
 
                             switch (itemDetails[Pos_itemType])
                             {
                                 case "Chip":
-                                    item = new Chip(itemName, itemPrice, itemsRemaining);
+                                    item = new Chip(itemName, itemPrice, itemQty);
                                     break;
                                 case "Drink":
-                                    item = new Drink(itemName, itemPrice, itemsRemaining);
+                                    item = new Drink(itemName, itemPrice, itemQty);
                                     break;
                                 case "Gum":
-                                    item = new Gum(itemName, itemPrice, itemsRemaining);
+                                    item = new Gum(itemName, itemPrice, itemQty);
                                     break;
                                 default:
-                                    item = new Chip(itemName, itemPrice, itemsRemaining);
+                                    item = new Chip(itemName, itemPrice, itemQty);
                                     break;
                             }
 
