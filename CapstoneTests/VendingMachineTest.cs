@@ -47,7 +47,7 @@ namespace CapstoneTests
             vm.RetreiveItem("A4");
             vm.RetreiveItem("A4");
             vm.RetreiveItem("A4");
-            string result = vm.VendingMachineItems["A1"].MessageWhenSoldOut;
+            string result = vm.VendingMachineItems["1"].MessageWhenSoldOut;
             string expected = "Sold out of Coke!\nBuy something else!";
 
             Assert.AreEqual(expected, result);

@@ -19,7 +19,7 @@ namespace CapstoneTests
             VendingItem item = new Chip("Zapp's Voodoo Chip", 3.05M, 5);
             VendingMachine vm = new VendingMachine();
             OrderService orderHandler = new OrderService(vm);
-            string[] orderParams = { "order", "6.25", "A1", "5"};
+            string[] orderParams = { "order", "6.25", "1", "5"};
             string result =  orderHandler.ProcessOrder(orderParams).GetAwaiter().GetResult();
 
             Assert.AreEqual("Success..Order is full filled.", result);
@@ -34,7 +34,7 @@ namespace CapstoneTests
             VendingItem item = new Chip("Zapp's Voodoo Chip", 3.05M, 5);
             VendingMachine vm = new VendingMachine();
             OrderService orderHandler = new OrderService(vm);
-            string[] orderParams = { "order", "6.25", "A1", "15" };
+            string[] orderParams = { "order", "6.25", "1", "15" };
             string result =  orderHandler.ProcessOrder(orderParams).GetAwaiter().GetResult();
 
             Assert.AreEqual("Entered quanity is greater than Inventory. Unable to fulfill order", result);
@@ -50,7 +50,7 @@ namespace CapstoneTests
             VendingItem item = new Chip("Zapp's Voodoo Chip", 3.05M, 5);
             VendingMachine vm = new VendingMachine();
             OrderService orderHandler = new OrderService(vm);
-            string[] orderParams = { "order", "6.25", "A1", "5","SD" };
+            string[] orderParams = { "order", "6.25", "1", "5","SD" };
             string result =  orderHandler.ProcessOrder(orderParams).GetAwaiter().GetResult();
 
             Assert.AreEqual("Invalid Parameters", result);

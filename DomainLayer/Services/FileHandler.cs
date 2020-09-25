@@ -12,8 +12,8 @@ namespace DomainLayer.Services
         private const int Pos_itemNumber = 0;
         private const int Pos_ItemName = 1;
         private const int Pos_ItemPrice = 2;
-        private const int Pos_itemType = 3;
-        private const int Pos_itemQty = 4;
+        private const int Pos_itemType = 4;
+        private const int Pos_itemQty = 3;
 
 
         public Dictionary<string, VendingItem> GetVendingItems()
