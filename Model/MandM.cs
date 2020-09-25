@@ -4,11 +4,11 @@ using System.Text;
 
 namespace Model
 {
-    public class Candy : VendingItem
+    public class MandM : VendingItem
     {
         public const string Message = "Chew, Chew, Yum!";
 
-        public Candy(
+        public MandM(
             string productName,
             decimal price,
             int itemsRemaining)

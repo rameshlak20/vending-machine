@@ -61,11 +61,8 @@ namespace DomainLayer.Services
                                 case "Snickers":
                                     item = new Snickers(itemName, itemPrice, itemQty);
                                     break;
-                                case "M&M’s":
-                                    item = new Candy(itemName, itemPrice, itemQty);
-                                    break;
                                 default:
-                                    item = new Drink(itemName, itemPrice, itemQty);
+                                    item = new MandM(itemName, itemPrice, itemQty);
                                     break;
                             }
 
@@ -81,7 +78,7 @@ namespace DomainLayer.Services
             else
             {
                 Console.WriteLine("Input file is missing!! The vending machine will now self destruct.");
-                items.Add("A1", new Drink("YOU BROKE IT!", 10000M, 5));
+                items.Add("A1", new Water("YOU BROKE IT!", 10000M, 5));
             }
 
             return items;
