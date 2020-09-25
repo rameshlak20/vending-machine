@@ -48,8 +48,6 @@ namespace DomainLayer.Services
                                 itemQty = 0;
                             }
 
-                           // int itemsRemaining = 5;
-
                             VendingItem item;
 
                             switch (itemDetails[Pos_itemType])
