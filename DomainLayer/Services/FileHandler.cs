@@ -55,9 +55,6 @@ namespace DomainLayer.Services
                                 case "Coke":
                                     item = new Coke(itemName, itemPrice, itemQty);
                                     break;
-                                case "Chip":
-                                    item = new Chip(itemName, itemPrice, itemQty);
-                                    break;
                                 case "Water":
                                     item = new Water(itemName, itemPrice, itemQty);
                                     break;
@@ -68,7 +65,7 @@ namespace DomainLayer.Services
                                     item = new Candy(itemName, itemPrice, itemQty);
                                     break;
                                 default:
-                                    item = new Gum(itemName, itemPrice, itemQty);
+                                    item = new Drink(itemName, itemPrice, itemQty);
                                     break;
                             }
 

@@ -16,7 +16,7 @@ namespace CapstoneTests
             FileHandler fileHandler = new FileHandler();
 
             Dictionary<string, VendingItem> items = fileHandler.GetVendingItems();
-            VendingItem item = new Chip("Zapp's Voodoo Chip", 3.05M, 5);
+            VendingItem item = new Drink("Zapp's Voodoo Drink", 3.05M, 5);
             VendingMachine vm = new VendingMachine();
             OrderService orderHandler = new OrderService(vm);
             string[] orderParams = { "order", "6.25", "1", "5"};
@@ -31,7 +31,7 @@ namespace CapstoneTests
             FileHandler fileHandler = new FileHandler();
 
             Dictionary<string, VendingItem> items = fileHandler.GetVendingItems();
-            VendingItem item = new Chip("Zapp's Voodoo Chip", 3.05M, 5);
+            VendingItem item = new Drink("Zapp's Voodoo Drink", 3.05M, 5);
             VendingMachine vm = new VendingMachine();
             OrderService orderHandler = new OrderService(vm);
             string[] orderParams = { "order", "6.25", "1", "15" };
@@ -47,7 +47,7 @@ namespace CapstoneTests
             FileHandler fileHandler = new FileHandler();
 
             Dictionary<string, VendingItem> items = fileHandler.GetVendingItems();
-            VendingItem item = new Chip("Zapp's Voodoo Chip", 3.05M, 5);
+            VendingItem item = new Drink("Zapp's Voodoo Drink", 3.05M, 5);
             VendingMachine vm = new VendingMachine();
             OrderService orderHandler = new OrderService(vm);
             string[] orderParams = { "order", "6.25", "1", "5","SD" };
