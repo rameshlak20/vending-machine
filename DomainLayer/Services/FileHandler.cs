@@ -50,19 +50,19 @@ namespace DomainLayer.Services
 
                             VendingItem item;
 
-                            switch (itemDetails[Pos_itemType])
+                            switch (itemDetails[Pos_ItemName])
                             {
-                                case "Chip":
-                                    item = new Chip(itemName, itemPrice, itemQty);
+                                case "Coke":
+                                    item = new Coke(itemName, itemPrice, itemQty);
                                     break;
-                                case "Drink":
-                                    item = new Drink(itemName, itemPrice, itemQty);
+                                case "Water":
+                                    item = new Water(itemName, itemPrice, itemQty);
                                     break;
-                                case "Gum":
-                                    item = new Gum(itemName, itemPrice, itemQty);
+                                case "Snickers":
+                                    item = new Snickers(itemName, itemPrice, itemQty);
                                     break;
                                 default:
-                                    item = new Chip(itemName, itemPrice, itemQty);
+                                    item = new Gum(itemName, itemPrice, itemQty);
                                     break;
                             }
 
