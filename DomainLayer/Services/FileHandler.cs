@@ -64,6 +64,9 @@ namespace DomainLayer.Services
                                 case "Snickers":
                                     item = new Snickers(itemName, itemPrice, itemQty);
                                     break;
+                                case "M&M’s":
+                                    item = new Candy(itemName, itemPrice, itemQty);
+                                    break;
                                 default:
                                     item = new Gum(itemName, itemPrice, itemQty);
                                     break;
