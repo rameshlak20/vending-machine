@@ -6,34 +6,39 @@
 
     public class Menu
     {
+        private readonly VendingMachine _vm;
+        private readonly OrderHandler _orderHdl;
 
-
+        public Menu(VendingMachine vm, OrderHandler orderHdl)
+        {
+            _vm = vm;
+            _orderHdl = orderHdl;
+        }
 
         public void Display()
         {
-            VendingMachine vm = new VendingMachine();
-
             PrintHeader();
             while (true)
             {
                 Console.WriteLine();
                 Console.WriteLine("Main Menu");
-                Console.WriteLine("1] Display Vending Machine Items");
-                Console.WriteLine("2] Purchase");
+                Console.WriteLine("inv] Inventory");
+                Console.WriteLine("order <amount> <item-number> <quantity>] Order");
                 Console.WriteLine("Q] Quit");
 
                 Console.Write("What option do you want to select? ");
                 string input = Console.ReadLine();
 
-                if (input == "1")
+                 if (input == "inv")
                 {
-                    Console.WriteLine("Displaying Items");
-                    vm.DisplayAllItems();
+                    _vm.Inventory();
                 }
-                else if (input == "2")
+                else if (input.StartsWith("order"))
                 {
-                    SubMenu subMenu = new SubMenu(vm);
-                    subMenu.Display();
+                    string[] orderParams = input.Split(' ');
+                    var result = _orderHdl.GetOrderMessage(orderParams);
+                    Console.WriteLine(result);
+
                 }
                 else if (input.ToUpper() == "Q")
                 {
@@ -50,7 +55,7 @@
             }
         }
 
-        private static void PrintHeader()
+        private  void PrintHeader()
         {
             Console.WriteLine("WELCOME TO THE BEST VENDING MACHINE EVER!!!! (Distant crowd roar)");
         }

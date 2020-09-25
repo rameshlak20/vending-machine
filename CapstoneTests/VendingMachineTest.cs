@@ -28,7 +28,7 @@ namespace CapstoneTests
             vm.Money.AddMoney("1.35");
             string result = vm.Money.GiveChange();
 
-            Assert.AreEqual(result, "Your change is 5 quarters, 1 dimes, and 0 nickels");
+            Assert.AreEqual(result, "Your change is 5 quarters and 1 dimes");
 
         }
 
@@ -36,7 +36,8 @@ namespace CapstoneTests
         public void TestsIfWillReturnOutOfStockIfSold5orMore()
         {
             VendingMachine vm = new VendingMachine();
-            var menu = new Menu();
+            OrderHandler orderHandler = new OrderHandler(vm);
+            var menu = new Menu(vm,orderHandler);
             vm.Money.AddMoney("10");
             vm.RetreiveItem("A4");
             vm.RetreiveItem("A4");
@@ -56,7 +57,7 @@ namespace CapstoneTests
         {
             VendingMachine vm = new VendingMachine();
             vm.RetreiveItem("A1");
-            string result = vm.MessageToUser;
+            string result = vm.NotEnoughMoneyError;
             Assert.AreEqual("Not enough money in the machine to complete the transaction.", result);
         }
 

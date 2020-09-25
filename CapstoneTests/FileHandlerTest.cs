@@ -18,5 +18,6 @@ namespace CapstoneTests
             VendingItem item = new Chip("Zapp's Voodoo Chip", 3.05M, 5);
             Assert.AreEqual(item, items["A1"]);
         }
-}
+
+    }
 }

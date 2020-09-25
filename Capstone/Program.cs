@@ -1,5 +1,6 @@
 ﻿namespace Capstone
 {
+    using Microsoft.Extensions.DependencyInjection;
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -8,8 +9,21 @@
     {
         public static void Main(string[] args)
         {
-            Menu menu = new Menu();
-            menu.Display();
+            var services = ConfigureServices();
+            var serviceProvider = services.BuildServiceProvider();
+
+            serviceProvider.GetService<Menu>().Display();
+        }
+
+        private static IServiceCollection ConfigureServices()
+        {
+            IServiceCollection services = new ServiceCollection();
+
+            services.AddTransient<Menu>();
+            services.AddTransient<VendingMachine>();
+            services.AddTransient<OrderHandler>();
+
+            return services;
         }
     }
 }

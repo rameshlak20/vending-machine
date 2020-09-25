@@ -48,6 +48,27 @@
             }
         }
 
+        public void Inventory() 
+        {
+            var index = 1;
+            foreach (KeyValuePair<string, VendingItem> kvp in this.VendingMachineItems)
+            {
+                if (kvp.Value.ItemsRemaining > 0)
+                {
+                    string itemNumber = kvp.Key.PadRight(5);
+                    string itemsRemaining = kvp.Value.ItemsRemaining.ToString();
+                    string productName = kvp.Value.ProductName.PadRight(40);
+                    string price = kvp.Value.Price.ToString("C");
+                    Console.WriteLine($"{index.ToString().PadRight(3)} {itemNumber} {productName}({itemsRemaining}):{price}");
+                    index++;
+                }
+                else
+                {
+                    Console.WriteLine($"{kvp.Key}: {kvp.Value.ProductName} IS SOLD OUT.");
+                }
+            }
+        }
+
         public bool ItemExists(string itemNumber)
         {
             return this.VendingMachineItems.ContainsKey(itemNumber);
