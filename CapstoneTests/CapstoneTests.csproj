@@ -16,6 +16,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Capstone\Capstone.csproj" />
+    <ProjectReference Include="..\DomainLayer\DomainLayer.csproj" />
+    <ProjectReference Include="..\Model\Model.csproj" />
   </ItemGroup>
 
   <ItemGroup>

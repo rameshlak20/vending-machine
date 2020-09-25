@@ -1,11 +1,12 @@
-﻿namespace Capstone
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Text;
+﻿using DomainLayer.Contract;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
-    public class Logger
+namespace DomainLayer.Services
+{
+    public class LoggerService:ILoggerService
     {
         public void Log(string message, decimal moneyBefore, decimal moneyAfter)
         {

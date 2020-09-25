@@ -1,14 +1,16 @@
-﻿namespace Capstone
+﻿using DomainLayer.Contract;
+using Model;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DomainLayer.Services
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
-    public class Money
+    public class Money : IMoney
     {
-        private Logger log;
+        private LoggerService log;
 
-        public Money(Logger log)
+        public Money(LoggerService log)
         {
             this.MoneyInMachine = 0M;
             this.log = log;
@@ -149,3 +151,4 @@
         }
     }
 }
+

@@ -1,9 +1,9 @@
-﻿namespace Capstone
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
+namespace Model
+{
     public class Gum : VendingItem
     {
         public const string Message = "Chew, Chew, Yum!";

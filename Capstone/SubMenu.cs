@@ -1,14 +1,15 @@
 ﻿namespace Capstone
 {
+    using DomainLayer.Contract;
     using System;
     using System.Collections.Generic;
     using System.Text;
 
     public class SubMenu
     {
-        private VendingMachine vm;
+        private IVendingMachine vm;
 
-        public SubMenu(VendingMachine vm)
+        public SubMenu(IVendingMachine vm)
         {
             this.vm = vm;
         }

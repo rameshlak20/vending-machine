@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Capstone;
+using DomainLayer.Services;
+using Model;
 
 namespace CapstoneTests
 {

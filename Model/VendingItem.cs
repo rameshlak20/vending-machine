@@ -1,9 +1,9 @@
-﻿namespace Capstone
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
+namespace Model
+{
     public abstract class VendingItem
     {
         /// <summary>
@@ -47,7 +47,7 @@
         /// </summary>
         /// <returns>bool</returns>
         public bool RemoveItem()
-            {
+        {
             if (this.ItemsRemaining > 0)
             {
                 this.ItemsRemaining--;

@@ -1,26 +1,32 @@
-﻿namespace Capstone
+﻿using DomainLayer.Contract;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace DomainLayer.Services
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
-    public class Menu
+    public class Menu :IMenu
     {
-        private readonly VendingMachine _vm;
-        private readonly OrderHandler _orderHdl;
+        private readonly IVendingMachine _vm;
+        private readonly IOrderService _orderService;
 
-        public Menu(VendingMachine vm, OrderHandler orderHdl)
+        public Menu(IVendingMachine vm, IOrderService orderService)
         {
             _vm = vm;
-            _orderHdl = orderHdl;
+            _orderService = orderService;
         }
 
-        public void Display()
+        public async void Display()
         {
             PrintHeader();
             while (true)
             {
                 Console.WriteLine();
+                _vm.DisplayItems();
+                Console.WriteLine("");
+                Console.WriteLine("**********************");
+                Console.WriteLine("");
+
                 Console.WriteLine("Main Menu");
                 Console.WriteLine("inv] Inventory");
                 Console.WriteLine("order <amount> <item-number> <quantity>] Order");
@@ -29,14 +35,14 @@
                 Console.Write("What option do you want to select? ");
                 string input = Console.ReadLine();
 
-                 if (input == "inv")
+                if (input == "inv")
                 {
                     _vm.Inventory();
                 }
                 else if (input.StartsWith("order"))
                 {
                     string[] orderParams = input.Split(' ');
-                    var result = _orderHdl.GetOrderMessage(orderParams);
+                    var result = await _orderService.ProcessOrder(orderParams);
                     Console.WriteLine(result);
 
                 }
@@ -55,7 +61,7 @@
             }
         }
 
-        private  void PrintHeader()
+        private void PrintHeader()
         {
             Console.WriteLine("WELCOME TO THE BEST VENDING MACHINE EVER!!!! (Distant crowd roar)");
         }

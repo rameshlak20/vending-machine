@@ -1,14 +1,14 @@
-﻿namespace Capstone
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Model
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
-    public class Chip : VendingItem
+    public class Drink : VendingItem
     {
-        public const string Message = "Crunch, Crunch, Yum!";
+        public const string Message = "Glug, Glug, Yum!";
 
-        public Chip(
+        public Drink(
             string productName,
             decimal price,
             int itemsRemaining)

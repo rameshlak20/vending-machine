@@ -1,11 +1,13 @@
-﻿namespace Capstone
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Text;
+﻿using DomainLayer.Contract;
+using Model;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
 
-    public class FileHandler
+namespace DomainLayer.Services
+{
+    public class FileHandler :IFileHandler
     {
         private const int Pos_itemNumber = 0;
         private const int Pos_ItemName = 1;

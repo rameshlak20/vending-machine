@@ -2,6 +2,7 @@
 namespace Capstone
 #pragma warning restore SA1633 // File must have header
 {
+    using Model;
     using System;
     using System.Collections.Generic;
     using System.Text;

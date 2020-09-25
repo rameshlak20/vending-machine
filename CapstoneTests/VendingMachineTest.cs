@@ -2,6 +2,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using System.Text;
 using Capstone;
+using DomainLayer.Services;
+
 namespace CapstoneTests
 {
     [TestClass]
@@ -36,7 +38,7 @@ namespace CapstoneTests
         public void TestsIfWillReturnOutOfStockIfSold5orMore()
         {
             VendingMachine vm = new VendingMachine();
-            OrderHandler orderHandler = new OrderHandler(vm);
+            OrderService orderHandler = new OrderService(vm);
             var menu = new Menu(vm,orderHandler);
             vm.Money.AddMoney("10");
             vm.RetreiveItem("A4");
